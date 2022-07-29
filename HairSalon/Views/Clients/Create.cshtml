@@ -8,14 +8,14 @@
 <hr />
 @using (Html.BeginForm())
 {
-  <span> | </span> @Html.LabelFor(model => model.ClientName) <span> | </span> 
+  @Html.LabelFor(model => model.ClientName) <span> | </span> 
   @Html.TextBoxFor(model => model.ClientName) <span> | </span>
 
   @Html.LabelFor(model => model.ClientDesc) <span> | </span>
   @Html.TextBoxFor(model => model.ClientDesc) <span> | </span>
 
-  @Html.LabelFor(model => model.Stylist) <span> | </span>
-  @Html.DropDownList("StylistId") <span> | </span>
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
 <hr />
   <input type="submit" value="ADD" />
 }

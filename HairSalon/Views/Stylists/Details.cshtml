@@ -5,16 +5,16 @@
 @model HairSalon.Models.Stylist
 
 <h2>Details About  @Html.DisplayFor(model => model.StylistName)</h2>
-<p>@Html.DisplayFor(model => model.StylistDesc)</p>
+<p>Specialty: @Html.DisplayFor(model => model.StylistDesc)</p>
 <hr />
 
-
+<h3>@Html.DisplayFor(model => model.StylistName)'s Clients: </h3>
 @foreach (Client client in Model.Clients)
 {
   <li>@Html.ActionLink($"{client.ClientName}", "Details", "Clients", new { id = client.ClientId })</li>
 }
 <hr />
-<p>@Html.ActionLink("Add New Client", "Create", "Clients")</p>
+<p>@Html.ActionLink("Add Client", "Create", "Clients")</p>
 <p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
